@@ -1,7 +1,5 @@
 this is a laravel api you can setup the project using next instructions<br />
-<br /><br />
 first of all pull current repository to your machine<br />
-<br /><br />
 from terminal run these commands<br />
 composer install<br />
 php artisan migrate<br />
