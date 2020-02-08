@@ -1,0 +1,1078 @@
+{
+	"info": {
+		"_postman_id": "087bae6f-59df-4904-8028-aed8b8e31b99",
+		"name": "Saloodo",
+		"description": "this is a simple api collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin Requests",
+			"item": [
+				{
+					"name": "Admin login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "osama.saieed@gmail.com",
+									"description": "user email",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"description": "user password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/admin/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"login"
+							]
+						},
+						"description": "used to admin login accept username and password in request body.\r\nwill return admin token you have to use this token,json in request header an all other admin requests.\r\ndefault data will be \r\nosama.saieed@gmail.com\r\npassword"
+					},
+					"response": []
+				},
+				{
+					"name": "Current admin",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjM0ZmE0ZmFjYWYxYzU3OGM1ZGZmNDMyNmQ1YWVmMWI2YTIwNjVkODFjNjA1N2E2MTFhYTNkMDBhNzIxMTNiM2UyYjZkYTgwODA2OGE3ZTgiLCJpYXQiOjE1ODExODExNDksIm5iZiI6MTU4MTE4MTE0OSwiZXhwIjoxNjEyODAzNTQ5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.3WlkVIyHm1MJ5zRc65jO2rIlgIyfKJvfkj_nl8WDNIdFaFSq_4vwy_MwS2eNa8WWNBr27OPylCvtPjRdRJYdH4rjIH7nXP2-tZ4m_OC1TJHxvAtSB2ESixnWruBlRRogyIGwClcnN-R2-vUZowHQ-Fel7zVpsWnbYOuoaO94jq6StYtcydt3F9MAAnW1ZZyoSBbsCKMlNqSxr7peWOyQFhtcDNCIP_QhW6zwqXVk_gxImA9dRp6zO-nFwKsauVcz5oPx62UcKijMQMwF15_uJY8nwasSeRtQi7XG8Al-okEOBj-8bvUN-EEijGKPXmrcyfjf2rYMceKEVZqkuP3Yg4XBbcmIm0UUuwYD8KqFibmyBK6MBffMveTamS2uSn4d28S3c6_oS4XM9l7d0fDU_MJkNFzuVDvx5D6ecKoayL2CXqzQdQTl2uO2wzx-ignkZJE4VYU0PhZ6W0CGiZ3t7iiO-Y_ocfdA109uZAiiXQa8ffDHt7UJB8RUlPS7D9ZvscA_vZTCE6_2zu2EnDntK_hBw3vsY6ihFQ1fiUaUQws-hPNpBwbZhMNpj6_w_RIXcadkYxZzarCXQRA62Oper-UGfwvhBSDgVrIaWzndxrAPHiEnCUPo6XvZu95In2k5g_GnmrQt0vdEzbLu2t21TUI7zmWJNd4E77JkK69EiHYa",
+								"description": "admin access token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/admin/user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"user"
+							]
+						},
+						"description": "used to retrive current admin data you have to use this token,json in request header an all other admin requests."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNGQ3M2UwYjk0NWE1NjcxNjkxMjQ0NjJiYWMxNTUwN2MwMTg3MGU5MTA4Yzk3OGU4NWMxMzM0NDhlNWZlYzYwNTc3YmZmMmI2MDU5NDMzZWEiLCJpYXQiOjE1ODExODE3OTcsIm5iZiI6MTU4MTE4MTc5NywiZXhwIjoxNjEyODA0MTk3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.SwD2QIQbu-gMop7VFBTn_NXTp7TAwE6w_u3Ep6CvMsxufQbBu8o7R2cJVz0ScTOUTZ4sm4OsYFPmhvGEYrJSTTgVTrvHbJlxWadHTRnNffcWdP72jK5xcCwlf1-XrfOrpSb-ggdCg4tDcYQxmCT0H_E_RvSJYvKSebdMDclyhSwKuYh_ASPCUi_xun_ZMNlu4hcm-IiONujMne3MoXI2u4ZLSYhx1FIa0J871CIj9hf9xX0lf7m7KE3y2BjtxhO-L6FF_Nkf02WAQ-F7YDg4NIsYfDseioODNcpi6yDZLy08bSlkqeUZIpJsRrX_JUe9-ELRB9eAzOYaZT6yhNKGiapT5zJenOfTjwx_n89a2p70HsW6aIYfsmZVf-KKfCURldMBUrvku0qIOCI0YwKZMnCytwB4FDAm5MCIC5ec24ysX7E5MieuHyv_BoyI6QFi4hM3Dvor8R1LIG_oIy4G0RqAQcCE7-bUTqEX1O8JC5IF9Of-_LOr9uURqvOOVwM5mjeiYagSyAIaykimX-bwatQAZky-UbBNdAkjVzDAw4ITixhuQ5DYBcwYLvtSKeVBTmxwOHwkEuRPYobW2vL0-TiNXx_UXhe8D6uYiYt0gum7TjgOisI2hDrgxDyEi0NZIDPoqdYqu4d16yqunA_UJgViwAL8DTLh1ObMe8iuJQc",
+								"description": "access token you have to add Bearer in front of token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/admin/products",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"products"
+							]
+						},
+						"description": "this route will return all products paginated , you have to add admin token to the header."
+					},
+					"response": []
+				},
+				{
+					"name": "New Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjE5MjhmMzkyNTZhMDc2ZjY5NjBjY2MyZjFlNzk4MzQzMTc3NjVkZmI0N2FhM2M0MWUyMDViNGQ3OTQwOTQzOTM1OGNmNTJhNzM1YTc3ZGYiLCJpYXQiOjE1ODExMDgwNzksIm5iZiI6MTU4MTEwODA3OSwiZXhwIjoxNjEyNzMwNDc5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.rDbfniKwou_FhieBfxF7tI24OpUKfBXjhxodcfVfhGUqEQS-mlLuflAetgnXH3YV-VK6nCkbDXA3JkASgMZt0P5GgMcJm0Paa5_5QFXOXi9PZCqo55R7Xvi2nmq_C4MbxDnMEFAkNR3l4oe0aj2EmPCFv_4hXyWRX3PgxtcSjBvRpievAW4283OWzBQE6ySVf2fQNM_VAlzPdqGBSU2xFULhGXDIZtWH3BxHEl7Ff7_sfvW9652ytxJwqOYtlEneJhwbLruLKB3G-_YHor7Vh9rN_KZ1lro7M-VzAcZEaTVd9yrqPt4ldHZZ-sq30ESIZijx1V_UkiBStHZTlLX_ZHU7G4Zka7jmFgnwiIQ-4DaWWMOShSaXJ76vS2fW-8AZx28EN-qCZhoNxA-wTMcEyVj5eKORHBcjUe-2kvVglzOIRz7dm15QZ3o-DC09P81s0sXFywxZpDcOH11q9g7fIqjEWDCiKTJYZ3-sKQTrUYVlzzRlvP6wl_Ve7EXScz-6c_E96w5oL_7o2wvqaJHB4XIQ8NjJeEYw0jAg4bcmCJlk6v8ykboHfghBzyjR-1toUWUwS05J0yRoxJlIIbALRYMusdqxXfyBiPiQqibo19dgIm6VpH0qpVOaK_ya4bTeBcWunozl79lFidrFwsgWroSiNrmcmY6uxjC1yTJUh6o",
+								"description": "access token you have to add Bearer in front of token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "this is the title of the product",
+									"description": "string the title of the product",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "this is the description of the product",
+									"description": "string the description  of the product",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "120",
+									"description": "double the price of the product",
+									"type": "text"
+								},
+								{
+									"key": "discount_amount",
+									"value": "40",
+									"description": "double the discount amount of the product",
+									"type": "text"
+								},
+								{
+									"key": "discount_type",
+									"value": "percentage",
+									"description": "string the description  discount [percentage|amount]",
+									"type": "text"
+								},
+								{
+									"key": "photos[]",
+									"description": "photo the files of the products",
+									"type": "file",
+									"src": [
+										"/C:/Users/Osama/Desktop/desktop/21558606_408486276220815_6862557020364839728_n.jpg",
+										"/C:/Users/Osama/Desktop/desktop/29217036_413986375693667_3295819368780267520_n.png",
+										"/C:/Users/Osama/Desktop/desktop/78036168_1524104934395059_5648049098532585472_n.jpg"
+									]
+								},
+								{
+									"key": "cover",
+									"description": "photo the cover photo of the product",
+									"type": "file",
+									"src": "/C:/Users/Osama/Desktop/desktop/80104402_1765551683578095_5169828271356903424_n.jpg"
+								},
+								{
+									"key": "bundle",
+									"value": "true",
+									"description": "is true or false (optional)",
+									"type": "text"
+								},
+								{
+									"key": "childs[]",
+									"value": "1",
+									"description": "if bundle you have to list childs products",
+									"type": "text"
+								},
+								{
+									"key": "childs[]",
+									"value": "2",
+									"description": "if bundle you have to list childs products",
+									"type": "text"
+								},
+								{
+									"key": "childs[]",
+									"value": "3",
+									"description": "if bundle you have to list childs products",
+									"type": "text"
+								},
+								{
+									"key": "childs[]",
+									"value": "10",
+									"description": "if bundle you have to list childs products",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/admin/products",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"products"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "this will create new product for you , you have to add admin token and check other data in body section this is products attributes.\nif new product is bundle you have to add bundle to true and add array of childs [MUST BE REAL IDS FOR PRODUCTS] in body section"
+					},
+					"response": []
+				},
+				{
+					"name": "Show product",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNGQ3M2UwYjk0NWE1NjcxNjkxMjQ0NjJiYWMxNTUwN2MwMTg3MGU5MTA4Yzk3OGU4NWMxMzM0NDhlNWZlYzYwNTc3YmZmMmI2MDU5NDMzZWEiLCJpYXQiOjE1ODExODE3OTcsIm5iZiI6MTU4MTE4MTc5NywiZXhwIjoxNjEyODA0MTk3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.SwD2QIQbu-gMop7VFBTn_NXTp7TAwE6w_u3Ep6CvMsxufQbBu8o7R2cJVz0ScTOUTZ4sm4OsYFPmhvGEYrJSTTgVTrvHbJlxWadHTRnNffcWdP72jK5xcCwlf1-XrfOrpSb-ggdCg4tDcYQxmCT0H_E_RvSJYvKSebdMDclyhSwKuYh_ASPCUi_xun_ZMNlu4hcm-IiONujMne3MoXI2u4ZLSYhx1FIa0J871CIj9hf9xX0lf7m7KE3y2BjtxhO-L6FF_Nkf02WAQ-F7YDg4NIsYfDseioODNcpi6yDZLy08bSlkqeUZIpJsRrX_JUe9-ELRB9eAzOYaZT6yhNKGiapT5zJenOfTjwx_n89a2p70HsW6aIYfsmZVf-KKfCURldMBUrvku0qIOCI0YwKZMnCytwB4FDAm5MCIC5ec24ysX7E5MieuHyv_BoyI6QFi4hM3Dvor8R1LIG_oIy4G0RqAQcCE7-bUTqEX1O8JC5IF9Of-_LOr9uURqvOOVwM5mjeiYagSyAIaykimX-bwatQAZky-UbBNdAkjVzDAw4ITixhuQ5DYBcwYLvtSKeVBTmxwOHwkEuRPYobW2vL0-TiNXx_UXhe8D6uYiYt0gum7TjgOisI2hDrgxDyEi0NZIDPoqdYqu4d16yqunA_UJgViwAL8DTLh1ObMe8iuJQc",
+								"description": "access token you have to add Bearer in front of token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/admin/products/9",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"products",
+								"9"
+							]
+						},
+						"description": "this will show product by id , you have to add product id in url besides the header data as usual"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNGQ3M2UwYjk0NWE1NjcxNjkxMjQ0NjJiYWMxNTUwN2MwMTg3MGU5MTA4Yzk3OGU4NWMxMzM0NDhlNWZlYzYwNTc3YmZmMmI2MDU5NDMzZWEiLCJpYXQiOjE1ODExODE3OTcsIm5iZiI6MTU4MTE4MTc5NywiZXhwIjoxNjEyODA0MTk3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.SwD2QIQbu-gMop7VFBTn_NXTp7TAwE6w_u3Ep6CvMsxufQbBu8o7R2cJVz0ScTOUTZ4sm4OsYFPmhvGEYrJSTTgVTrvHbJlxWadHTRnNffcWdP72jK5xcCwlf1-XrfOrpSb-ggdCg4tDcYQxmCT0H_E_RvSJYvKSebdMDclyhSwKuYh_ASPCUi_xun_ZMNlu4hcm-IiONujMne3MoXI2u4ZLSYhx1FIa0J871CIj9hf9xX0lf7m7KE3y2BjtxhO-L6FF_Nkf02WAQ-F7YDg4NIsYfDseioODNcpi6yDZLy08bSlkqeUZIpJsRrX_JUe9-ELRB9eAzOYaZT6yhNKGiapT5zJenOfTjwx_n89a2p70HsW6aIYfsmZVf-KKfCURldMBUrvku0qIOCI0YwKZMnCytwB4FDAm5MCIC5ec24ysX7E5MieuHyv_BoyI6QFi4hM3Dvor8R1LIG_oIy4G0RqAQcCE7-bUTqEX1O8JC5IF9Of-_LOr9uURqvOOVwM5mjeiYagSyAIaykimX-bwatQAZky-UbBNdAkjVzDAw4ITixhuQ5DYBcwYLvtSKeVBTmxwOHwkEuRPYobW2vL0-TiNXx_UXhe8D6uYiYt0gum7TjgOisI2hDrgxDyEi0NZIDPoqdYqu4d16yqunA_UJgViwAL8DTLh1ObMe8iuJQc",
+								"description": "access token you have to add Bearer in front of token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/admin/products/9",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"products",
+								"9"
+							]
+						},
+						"description": "this will delete product by id , you have to add product id in url besides the header data as usual"
+					},
+					"response": []
+				},
+				{
+					"name": "Update product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNGQ3M2UwYjk0NWE1NjcxNjkxMjQ0NjJiYWMxNTUwN2MwMTg3MGU5MTA4Yzk3OGU4NWMxMzM0NDhlNWZlYzYwNTc3YmZmMmI2MDU5NDMzZWEiLCJpYXQiOjE1ODExODE3OTcsIm5iZiI6MTU4MTE4MTc5NywiZXhwIjoxNjEyODA0MTk3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.SwD2QIQbu-gMop7VFBTn_NXTp7TAwE6w_u3Ep6CvMsxufQbBu8o7R2cJVz0ScTOUTZ4sm4OsYFPmhvGEYrJSTTgVTrvHbJlxWadHTRnNffcWdP72jK5xcCwlf1-XrfOrpSb-ggdCg4tDcYQxmCT0H_E_RvSJYvKSebdMDclyhSwKuYh_ASPCUi_xun_ZMNlu4hcm-IiONujMne3MoXI2u4ZLSYhx1FIa0J871CIj9hf9xX0lf7m7KE3y2BjtxhO-L6FF_Nkf02WAQ-F7YDg4NIsYfDseioODNcpi6yDZLy08bSlkqeUZIpJsRrX_JUe9-ELRB9eAzOYaZT6yhNKGiapT5zJenOfTjwx_n89a2p70HsW6aIYfsmZVf-KKfCURldMBUrvku0qIOCI0YwKZMnCytwB4FDAm5MCIC5ec24ysX7E5MieuHyv_BoyI6QFi4hM3Dvor8R1LIG_oIy4G0RqAQcCE7-bUTqEX1O8JC5IF9Of-_LOr9uURqvOOVwM5mjeiYagSyAIaykimX-bwatQAZky-UbBNdAkjVzDAw4ITixhuQ5DYBcwYLvtSKeVBTmxwOHwkEuRPYobW2vL0-TiNXx_UXhe8D6uYiYt0gum7TjgOisI2hDrgxDyEi0NZIDPoqdYqu4d16yqunA_UJgViwAL8DTLh1ObMe8iuJQc",
+								"description": "access token you have to add Bearer in front of token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "the updated price",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "this is description",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1200",
+									"type": "text"
+								},
+								{
+									"key": "discount_amount",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "discount_type",
+									"value": "percentage",
+									"type": "text"
+								},
+								{
+									"key": "cover",
+									"type": "file",
+									"src": "/C:/Users/Osama/Desktop/desktop/82529426_2604261102985284_4943159267776528384_n.jpg"
+								},
+								{
+									"key": "photos[]",
+									"type": "file",
+									"src": "/C:/Users/Osama/Desktop/desktop/78216280_2520349594739653_5002164408957272064_n.jpg"
+								},
+								{
+									"key": "bundle",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "childs[]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "childs[]",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "childs[]",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/admin/products/8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"products",
+								"8"
+							]
+						},
+						"description": "this will update product by id , you have to add product id in url besides the header data as usual and body content will be new product attributes."
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNmQ1NWIyNzZkNjIwOWU4ZTFiMjZjOWFmOTFiYmRiODAyZDJhMGFiZTg4Zjg0MWQ0ZWU3NzFmMTUwNDRmZTYwZTg3ZTZlNTk2ODdkNjU5YzkiLCJpYXQiOjE1ODExMTAzNDAsIm5iZiI6MTU4MTExMDM0MCwiZXhwIjoxNjEyNzMyNzQwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.H9jwXRe-iSd-CfVtgUZrSxinm3hFf1D2TJGvu5ZB0QkiWBSQsb-AWg9azD1LfU0wh64hkwkSGtL8WDschxXB-LGJvGb95AZvSc08LtBX1KW6720nZ3n9cXGHsTvEXXl-l5T8jNLu1GBLNQbTtwszfWxvW761zoi-Ba0ZRr_D6rZ0khzzTfGd3qTPteuSPx50yeoD16EzsMdoYep4My_YXh8NUaePa-t8wubqqm0LnVjqOWvEavfy1G97YHsmlbC0sDk15QjUIe5LEY7UkU9qzzcUaM9OHJUzyg_49kxBwkyPs4sXJa2dLHboaURE83F364c5sD4nT3DWvXEdtXWxEkfRFKv6_lblqbtWastbrVwh1rxypKLkmbVOqrM1rJCjDrvyTeUQfHCxTeiObhFFbPPq29QuCU9ppJT2VITk8Pqvd0lxh7q6C9jasf-822IJGma82fO4y2cJhLUatdKk0jb0piuw0_xNkRjov_gkOEYUO_QwtXcBJ7gmsK61xvvL1nPc8_QCUIa9Pd3N13oavEZlOjxliaDD2t0BltDbAqbk99A6LyFWlgJKS8hUxJMLS4GDsaAl62Sm9NbuZ_kSDxGtIcnuzRxl08JdQX6QXs_3m1L8mIhUABBMT1OSQ7fmwJ1jUxJb8vfYav7svKpwxA513ZvtcizG2QWSc1MqTIc",
+								"description": "access token you have to add Bearer in front of token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/admin/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"logout"
+							]
+						},
+						"description": "this will logout the current admin, add current admin token in header"
+					},
+					"response": []
+				},
+				{
+					"name": "All Orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjM0ZmE0ZmFjYWYxYzU3OGM1ZGZmNDMyNmQ1YWVmMWI2YTIwNjVkODFjNjA1N2E2MTFhYTNkMDBhNzIxMTNiM2UyYjZkYTgwODA2OGE3ZTgiLCJpYXQiOjE1ODExODExNDksIm5iZiI6MTU4MTE4MTE0OSwiZXhwIjoxNjEyODAzNTQ5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.3WlkVIyHm1MJ5zRc65jO2rIlgIyfKJvfkj_nl8WDNIdFaFSq_4vwy_MwS2eNa8WWNBr27OPylCvtPjRdRJYdH4rjIH7nXP2-tZ4m_OC1TJHxvAtSB2ESixnWruBlRRogyIGwClcnN-R2-vUZowHQ-Fel7zVpsWnbYOuoaO94jq6StYtcydt3F9MAAnW1ZZyoSBbsCKMlNqSxr7peWOyQFhtcDNCIP_QhW6zwqXVk_gxImA9dRp6zO-nFwKsauVcz5oPx62UcKijMQMwF15_uJY8nwasSeRtQi7XG8Al-okEOBj-8bvUN-EEijGKPXmrcyfjf2rYMceKEVZqkuP3Yg4XBbcmIm0UUuwYD8KqFibmyBK6MBffMveTamS2uSn4d28S3c6_oS4XM9l7d0fDU_MJkNFzuVDvx5D6ecKoayL2CXqzQdQTl2uO2wzx-ignkZJE4VYU0PhZ6W0CGiZ3t7iiO-Y_ocfdA109uZAiiXQa8ffDHt7UJB8RUlPS7D9ZvscA_vZTCE6_2zu2EnDntK_hBw3vsY6ihFQ1fiUaUQws-hPNpBwbZhMNpj6_w_RIXcadkYxZzarCXQRA62Oper-UGfwvhBSDgVrIaWzndxrAPHiEnCUPo6XvZu95In2k5g_GnmrQt0vdEzbLu2t21TUI7zmWJNd4E77JkK69EiHY",
+								"description": "access token you have to add Bearer in front of token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/admin/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"orders"
+							]
+						},
+						"description": "this route all admin to show all product paginated by 10 for each page, accept admin token in header and add page number in url // ?page=2"
+					},
+					"response": []
+				},
+				{
+					"name": "Get order by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjM0ZmE0ZmFjYWYxYzU3OGM1ZGZmNDMyNmQ1YWVmMWI2YTIwNjVkODFjNjA1N2E2MTFhYTNkMDBhNzIxMTNiM2UyYjZkYTgwODA2OGE3ZTgiLCJpYXQiOjE1ODExODExNDksIm5iZiI6MTU4MTE4MTE0OSwiZXhwIjoxNjEyODAzNTQ5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.3WlkVIyHm1MJ5zRc65jO2rIlgIyfKJvfkj_nl8WDNIdFaFSq_4vwy_MwS2eNa8WWNBr27OPylCvtPjRdRJYdH4rjIH7nXP2-tZ4m_OC1TJHxvAtSB2ESixnWruBlRRogyIGwClcnN-R2-vUZowHQ-Fel7zVpsWnbYOuoaO94jq6StYtcydt3F9MAAnW1ZZyoSBbsCKMlNqSxr7peWOyQFhtcDNCIP_QhW6zwqXVk_gxImA9dRp6zO-nFwKsauVcz5oPx62UcKijMQMwF15_uJY8nwasSeRtQi7XG8Al-okEOBj-8bvUN-EEijGKPXmrcyfjf2rYMceKEVZqkuP3Yg4XBbcmIm0UUuwYD8KqFibmyBK6MBffMveTamS2uSn4d28S3c6_oS4XM9l7d0fDU_MJkNFzuVDvx5D6ecKoayL2CXqzQdQTl2uO2wzx-ignkZJE4VYU0PhZ6W0CGiZ3t7iiO-Y_ocfdA109uZAiiXQa8ffDHt7UJB8RUlPS7D9ZvscA_vZTCE6_2zu2EnDntK_hBw3vsY6ihFQ1fiUaUQws-hPNpBwbZhMNpj6_w_RIXcadkYxZzarCXQRA62Oper-UGfwvhBSDgVrIaWzndxrAPHiEnCUPo6XvZu95In2k5g_GnmrQt0vdEzbLu2t21TUI7zmWJNd4E77JkK69EiHY",
+								"description": "access token you have to add Bearer in front of token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/admin/order/8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"order",
+								"8"
+							]
+						},
+						"description": "this route will retrive order data by order id witches added through url, again this will accept admin token in header"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjM0ZmE0ZmFjYWYxYzU3OGM1ZGZmNDMyNmQ1YWVmMWI2YTIwNjVkODFjNjA1N2E2MTFhYTNkMDBhNzIxMTNiM2UyYjZkYTgwODA2OGE3ZTgiLCJpYXQiOjE1ODExODExNDksIm5iZiI6MTU4MTE4MTE0OSwiZXhwIjoxNjEyODAzNTQ5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.3WlkVIyHm1MJ5zRc65jO2rIlgIyfKJvfkj_nl8WDNIdFaFSq_4vwy_MwS2eNa8WWNBr27OPylCvtPjRdRJYdH4rjIH7nXP2-tZ4m_OC1TJHxvAtSB2ESixnWruBlRRogyIGwClcnN-R2-vUZowHQ-Fel7zVpsWnbYOuoaO94jq6StYtcydt3F9MAAnW1ZZyoSBbsCKMlNqSxr7peWOyQFhtcDNCIP_QhW6zwqXVk_gxImA9dRp6zO-nFwKsauVcz5oPx62UcKijMQMwF15_uJY8nwasSeRtQi7XG8Al-okEOBj-8bvUN-EEijGKPXmrcyfjf2rYMceKEVZqkuP3Yg4XBbcmIm0UUuwYD8KqFibmyBK6MBffMveTamS2uSn4d28S3c6_oS4XM9l7d0fDU_MJkNFzuVDvx5D6ecKoayL2CXqzQdQTl2uO2wzx-ignkZJE4VYU0PhZ6W0CGiZ3t7iiO-Y_ocfdA109uZAiiXQa8ffDHt7UJB8RUlPS7D9ZvscA_vZTCE6_2zu2EnDntK_hBw3vsY6ihFQ1fiUaUQws-hPNpBwbZhMNpj6_w_RIXcadkYxZzarCXQRA62Oper-UGfwvhBSDgVrIaWzndxrAPHiEnCUPo6XvZu95In2k5g_GnmrQt0vdEzbLu2t21TUI7zmWJNd4E77JkK69EiHY",
+								"description": "access token you have to add Bearer in front of token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/admin/orders/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"orders",
+								"1"
+							]
+						},
+						"description": "this route will retrive user order paginated by 10 , accept user id in url, accept admin token,json in header."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Customer Requests",
+			"item": [
+				{
+					"name": "Register new customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "osama",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "osama3@web.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"register"
+							]
+						},
+						"description": "this route will create new customer in db, accept name, email, password in body, json in header"
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "osama.saieed@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						},
+						"description": "this will login customer to the system accept email and password in body , json in header, respons is token which is will used in other customer requests"
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/products",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						},
+						"description": "this route will retrive all products paginated by 10, accept json in header"
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Logout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZDg4MmQ4ZmExNWRlNmY0YmVhYWNhZjEyZGJjNWE2YTg0NDhmNjZmNWFmY2U5ZDdlOGUwMDYyMTlkMDZjYzQ2MWNiNzgyNmRjZmI2ZjRkYjMiLCJpYXQiOjE1ODExMTM0ODAsIm5iZiI6MTU4MTExMzQ4MCwiZXhwIjoxNjEyNzM1ODgwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.zv5UxYWHTT_hnVX6_dlKfEHjmB4A2sMQBL5UGFcyxr3EWTpHm6pIp5wu28ujJ8-nrxm38XQ29u6ic32JixMIXVheGHrvUmUXDBgLv_bkaSWXu_smTUt9neSYn0ckgFWG76hx4mcp78JLi73Kk6TpmEboHZeazz0hCcCHuxjE_ePPfP6RqiYkWQ8B_H-cAFKWu7KsQmTK34072X4VTIyqCkKUz9X715MPOrDEkhQMyDOVE1GrhuXrsx8tpfDLLd3QoHvg3ONzyJ8NnqPTnW1F-5rFzMMQK7tGW9sszvgfQW4qCRFC4yyE9BDSx3MDb2qP2572RDH1PcZdXfbtG6Xe6lync2aXgYCf_vuuBO_CUAA5OK_jn63CXbt_lnPePNL4nN0AP6VzwuNXLpuVwdQXlVjgOnESo5uhjNTVsyxM77Kz5jQ2JLnZjGHR3HR_IpIXTC8-6Jhp77U9Iks01SKO1zBF9W3J5xKyHEzhzc6MqaCmb8obDJ-V0OEgo5Jtilq1ugxT7tezC3v_8w8YOjyCpqu2JhgVUFqwMd-ZQSEIlx0kmPhxjyD1piJArlnthTuMqsgjLDpZicIUz9sJo0G_uDeK4zoM9PQEINlHmR-uHpuBJzzb58zMczbp31m43LeoIOv2Uz200C9FPE9xL10nSmj9S3Sxkmpfu_QDIbFiFto",
+								"description": "access token you have to add Bearer in front of token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"logout"
+							]
+						},
+						"description": "this route used to logout the customer from the system, accept json, customer token in header"
+					},
+					"response": []
+				},
+				{
+					"name": "Add To Cart",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTEwMTc1OWNhMjQ0NmI5MGIxZWVkY2Q3YTJmOGUwN2Q4Y2I3N2QzZGE0ZDY1Y2Q5ZDEwZWU1ZDdjYTdiNTE5YzExZGJjMjE0MDAzNDFjMWEiLCJpYXQiOjE1ODExMTQ4MDAsIm5iZiI6MTU4MTExNDgwMCwiZXhwIjoxNjEyNzM3MjAwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Diok_AeHoj6MlfEX2KVUJ0KiOqxQ9FgVfzTdR5dHd2crX3cOGVK_GW45M6bgrdAt3KwRuMcz_lxYmj4R0MVtHMi3OF-3ppFKQUnngxSz-nUAJU_O3VhSmFD7ijiCLLVltDBGPCNnNTmiPrGc-LQD-5HCJBqdWRn8MqbIhRk-zpwvvk1j4BfiVZYH4QHjhmFj1uXvhPxL3TEUZhN4c1UMGUNigR7IubFa-Pr5sofgQ3LcPYJp-3ZUTTBEGVpYpxhjEDIA1vMz2wQecWeEuwnNXjlsiX2qQcQSu1XaPgysnrP5MklKUd1S2-dEyVMjaZdxV2PPSu4g0oN4JOMErBSEbY2D1lKhLZ6GqxdjRL_yXeJxVdJXO7V2Bo2EjfD5mzZIFTWIDMZ68h3v9bRhrn5wN2hboIZBuzMdwRXd0K3mCHaOcKoY7hkFTKvWGjC3ZUDhwkAgOcVK_y2p7ZOBLt7WC0Yyb_kJ3q8UrYB4T3mB-wCOq31aYm8oxmBoi6MMTVr88FxMweuRr8otBxzjWsMn9ZCxX9TSlfG-1KKR9YqS3Q21AWtBND-p8RgA9WSvXAJk00RFH7aEHSmxHIiAbafPSxQgN8P_2mTaQCvyosGkNNSjUu4lxy3e74CmTRGLBAZhVYxde3SscyRK0Mx01hVgBxGTYJ0QJYD47HVK4VSXLak",
+								"description": "access token you have to add Bearer in front of token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/products/1/addtocart",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"1",
+								"addtocart"
+							]
+						},
+						"description": "this route will add proudct to the cart,accept product id in url, accept json and customer token in header, repeat this operation will increase cart quantity"
+					},
+					"response": []
+				},
+				{
+					"name": "Cart",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"description": "access token you have to add Bearer in front of token",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTEwMTc1OWNhMjQ0NmI5MGIxZWVkY2Q3YTJmOGUwN2Q4Y2I3N2QzZGE0ZDY1Y2Q5ZDEwZWU1ZDdjYTdiNTE5YzExZGJjMjE0MDAzNDFjMWEiLCJpYXQiOjE1ODExMTQ4MDAsIm5iZiI6MTU4MTExNDgwMCwiZXhwIjoxNjEyNzM3MjAwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Diok_AeHoj6MlfEX2KVUJ0KiOqxQ9FgVfzTdR5dHd2crX3cOGVK_GW45M6bgrdAt3KwRuMcz_lxYmj4R0MVtHMi3OF-3ppFKQUnngxSz-nUAJU_O3VhSmFD7ijiCLLVltDBGPCNnNTmiPrGc-LQD-5HCJBqdWRn8MqbIhRk-zpwvvk1j4BfiVZYH4QHjhmFj1uXvhPxL3TEUZhN4c1UMGUNigR7IubFa-Pr5sofgQ3LcPYJp-3ZUTTBEGVpYpxhjEDIA1vMz2wQecWeEuwnNXjlsiX2qQcQSu1XaPgysnrP5MklKUd1S2-dEyVMjaZdxV2PPSu4g0oN4JOMErBSEbY2D1lKhLZ6GqxdjRL_yXeJxVdJXO7V2Bo2EjfD5mzZIFTWIDMZ68h3v9bRhrn5wN2hboIZBuzMdwRXd0K3mCHaOcKoY7hkFTKvWGjC3ZUDhwkAgOcVK_y2p7ZOBLt7WC0Yyb_kJ3q8UrYB4T3mB-wCOq31aYm8oxmBoi6MMTVr88FxMweuRr8otBxzjWsMn9ZCxX9TSlfG-1KKR9YqS3Q21AWtBND-p8RgA9WSvXAJk00RFH7aEHSmxHIiAbafPSxQgN8P_2mTaQCvyosGkNNSjUu4lxy3e74CmTRGLBAZhVYxde3SscyRK0Mx01hVgBxGTYJ0QJYD47HVK4VSXLak"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/cart",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"cart"
+							]
+						},
+						"description": "this route will retirve cart contents , accept json, customer token in header"
+					},
+					"response": []
+				},
+				{
+					"name": "Change Cart item amount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"description": "access token you have to add Bearer in front of token",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTEwMTc1OWNhMjQ0NmI5MGIxZWVkY2Q3YTJmOGUwN2Q4Y2I3N2QzZGE0ZDY1Y2Q5ZDEwZWU1ZDdjYTdiNTE5YzExZGJjMjE0MDAzNDFjMWEiLCJpYXQiOjE1ODExMTQ4MDAsIm5iZiI6MTU4MTExNDgwMCwiZXhwIjoxNjEyNzM3MjAwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Diok_AeHoj6MlfEX2KVUJ0KiOqxQ9FgVfzTdR5dHd2crX3cOGVK_GW45M6bgrdAt3KwRuMcz_lxYmj4R0MVtHMi3OF-3ppFKQUnngxSz-nUAJU_O3VhSmFD7ijiCLLVltDBGPCNnNTmiPrGc-LQD-5HCJBqdWRn8MqbIhRk-zpwvvk1j4BfiVZYH4QHjhmFj1uXvhPxL3TEUZhN4c1UMGUNigR7IubFa-Pr5sofgQ3LcPYJp-3ZUTTBEGVpYpxhjEDIA1vMz2wQecWeEuwnNXjlsiX2qQcQSu1XaPgysnrP5MklKUd1S2-dEyVMjaZdxV2PPSu4g0oN4JOMErBSEbY2D1lKhLZ6GqxdjRL_yXeJxVdJXO7V2Bo2EjfD5mzZIFTWIDMZ68h3v9bRhrn5wN2hboIZBuzMdwRXd0K3mCHaOcKoY7hkFTKvWGjC3ZUDhwkAgOcVK_y2p7ZOBLt7WC0Yyb_kJ3q8UrYB4T3mB-wCOq31aYm8oxmBoi6MMTVr88FxMweuRr8otBxzjWsMn9ZCxX9TSlfG-1KKR9YqS3Q21AWtBND-p8RgA9WSvXAJk00RFH7aEHSmxHIiAbafPSxQgN8P_2mTaQCvyosGkNNSjUu4lxy3e74CmTRGLBAZhVYxde3SscyRK0Mx01hVgBxGTYJ0QJYD47HVK4VSXLak"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "count",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/change_item/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"change_item",
+								"1"
+							]
+						},
+						"description": "this route will change cart item count , accept item id in url, accept count in body '//count 0 will delete the item from cart', json, customer token in header."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cart Item",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTEwMTc1OWNhMjQ0NmI5MGIxZWVkY2Q3YTJmOGUwN2Q4Y2I3N2QzZGE0ZDY1Y2Q5ZDEwZWU1ZDdjYTdiNTE5YzExZGJjMjE0MDAzNDFjMWEiLCJpYXQiOjE1ODExMTQ4MDAsIm5iZiI6MTU4MTExNDgwMCwiZXhwIjoxNjEyNzM3MjAwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Diok_AeHoj6MlfEX2KVUJ0KiOqxQ9FgVfzTdR5dHd2crX3cOGVK_GW45M6bgrdAt3KwRuMcz_lxYmj4R0MVtHMi3OF-3ppFKQUnngxSz-nUAJU_O3VhSmFD7ijiCLLVltDBGPCNnNTmiPrGc-LQD-5HCJBqdWRn8MqbIhRk-zpwvvk1j4BfiVZYH4QHjhmFj1uXvhPxL3TEUZhN4c1UMGUNigR7IubFa-Pr5sofgQ3LcPYJp-3ZUTTBEGVpYpxhjEDIA1vMz2wQecWeEuwnNXjlsiX2qQcQSu1XaPgysnrP5MklKUd1S2-dEyVMjaZdxV2PPSu4g0oN4JOMErBSEbY2D1lKhLZ6GqxdjRL_yXeJxVdJXO7V2Bo2EjfD5mzZIFTWIDMZ68h3v9bRhrn5wN2hboIZBuzMdwRXd0K3mCHaOcKoY7hkFTKvWGjC3ZUDhwkAgOcVK_y2p7ZOBLt7WC0Yyb_kJ3q8UrYB4T3mB-wCOq31aYm8oxmBoi6MMTVr88FxMweuRr8otBxzjWsMn9ZCxX9TSlfG-1KKR9YqS3Q21AWtBND-p8RgA9WSvXAJk00RFH7aEHSmxHIiAbafPSxQgN8P_2mTaQCvyosGkNNSjUu4lxy3e74CmTRGLBAZhVYxde3SscyRK0Mx01hVgBxGTYJ0QJYD47HVK4VSXLak",
+								"description": "access token you have to add Bearer in front of token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/delete_item/13",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"delete_item",
+								"13"
+							]
+						},
+						"description": "this route will delete cart item , accept item id in url,json, customer token in header."
+					},
+					"response": []
+				},
+				{
+					"name": "Order",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMGZjYzY0YjYzZWYxYzg0YWY5ZmIyMTM0ZWQwYTMyNWNjNWQ3Mzc3ZjZhM2EyZTc3YTU1ZGU0ZWE4NmY1NDk3NTk2MDM2ODhhNjQyODgwOGQiLCJpYXQiOjE1ODExMTM3NjIsIm5iZiI6MTU4MTExMzc2MiwiZXhwIjoxNjEyNzM2MTYyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.FU64cldC_Ogtc8-bHQIclihSS8xCtOynaJ8s8tZyzMtwvJEKsAhofIwAwsYUlWBfOMZgi5LWhpHVLiK5l0TWq9mhhiFwLYedwyfKaRXp5pxr7satJYiP4q9FUMDmXSUpv34Z4yC5Q--iuPu0r9sWukhPGMFFSlLDC6cu9EiXaopo48ewUzLZd2gb2ZbIqXi6diITv3ZbgUFNpD0addrEVlozxZ1iQvZKFgIjzBp-PuGKETYFwmoGSYSWx25WvgfT4jdsPC0q_n3nYMgqVguDpTTgeUglLqyHQvES7Hh9LKFudiqi89QJLTA_uZRO7HCK5buhZQO-OPK1TLqY4PvPQbLjqJwwSfw5izWO__46VhYzhtOlbtpfh6PUnWXK-R-sPdSnohldmDBHeKH3Ls7sCDnEXXRAIaFSImTUTWzAyYWuzl4ZOQewhSTKNvghA_xgNzacqExHsSnZ-VOL-sgmOlrolmejL0U83lh96AYkaYoVu__Mai5ESWmT-LJWV-zCpEldw-02UE-K0pdK8O-1NrrmwkA_FBeVTb54gETTNjT3sR2a4wzIBpA1jWATmiXKUfxRwCaw8qWRNv-3mHTjedlfUjYBUWOzIRaEhW-N7oXP4LSXdXeHzYYaWyYcvSmnYWiG6hDFwaG2S1rBPyYovM5vIUOI1027jpbGjtBKo7w",
+								"description": "access token you have to add Bearer in front of token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/cart/order",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"cart",
+								"order"
+							]
+						},
+						"description": "this wil place customer order ,accept json, customer token in header"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order By id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTEwMTc1OWNhMjQ0NmI5MGIxZWVkY2Q3YTJmOGUwN2Q4Y2I3N2QzZGE0ZDY1Y2Q5ZDEwZWU1ZDdjYTdiNTE5YzExZGJjMjE0MDAzNDFjMWEiLCJpYXQiOjE1ODExMTQ4MDAsIm5iZiI6MTU4MTExNDgwMCwiZXhwIjoxNjEyNzM3MjAwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Diok_AeHoj6MlfEX2KVUJ0KiOqxQ9FgVfzTdR5dHd2crX3cOGVK_GW45M6bgrdAt3KwRuMcz_lxYmj4R0MVtHMi3OF-3ppFKQUnngxSz-nUAJU_O3VhSmFD7ijiCLLVltDBGPCNnNTmiPrGc-LQD-5HCJBqdWRn8MqbIhRk-zpwvvk1j4BfiVZYH4QHjhmFj1uXvhPxL3TEUZhN4c1UMGUNigR7IubFa-Pr5sofgQ3LcPYJp-3ZUTTBEGVpYpxhjEDIA1vMz2wQecWeEuwnNXjlsiX2qQcQSu1XaPgysnrP5MklKUd1S2-dEyVMjaZdxV2PPSu4g0oN4JOMErBSEbY2D1lKhLZ6GqxdjRL_yXeJxVdJXO7V2Bo2EjfD5mzZIFTWIDMZ68h3v9bRhrn5wN2hboIZBuzMdwRXd0K3mCHaOcKoY7hkFTKvWGjC3ZUDhwkAgOcVK_y2p7ZOBLt7WC0Yyb_kJ3q8UrYB4T3mB-wCOq31aYm8oxmBoi6MMTVr88FxMweuRr8otBxzjWsMn9ZCxX9TSlfG-1KKR9YqS3Q21AWtBND-p8RgA9WSvXAJk00RFH7aEHSmxHIiAbafPSxQgN8P_2mTaQCvyosGkNNSjUu4lxy3e74CmTRGLBAZhVYxde3SscyRK0Mx01hVgBxGTYJ0QJYD47HVK4VSXLak",
+								"description": "access token you have to add Bearer in front of token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/order/5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"order",
+								"5"
+							]
+						},
+						"description": "this wil retrive customer order by id , accept order id in url, json, customer token in header"
+					},
+					"response": []
+				},
+				{
+					"name": "My Orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTEwMTc1OWNhMjQ0NmI5MGIxZWVkY2Q3YTJmOGUwN2Q4Y2I3N2QzZGE0ZDY1Y2Q5ZDEwZWU1ZDdjYTdiNTE5YzExZGJjMjE0MDAzNDFjMWEiLCJpYXQiOjE1ODExMTQ4MDAsIm5iZiI6MTU4MTExNDgwMCwiZXhwIjoxNjEyNzM3MjAwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Diok_AeHoj6MlfEX2KVUJ0KiOqxQ9FgVfzTdR5dHd2crX3cOGVK_GW45M6bgrdAt3KwRuMcz_lxYmj4R0MVtHMi3OF-3ppFKQUnngxSz-nUAJU_O3VhSmFD7ijiCLLVltDBGPCNnNTmiPrGc-LQD-5HCJBqdWRn8MqbIhRk-zpwvvk1j4BfiVZYH4QHjhmFj1uXvhPxL3TEUZhN4c1UMGUNigR7IubFa-Pr5sofgQ3LcPYJp-3ZUTTBEGVpYpxhjEDIA1vMz2wQecWeEuwnNXjlsiX2qQcQSu1XaPgysnrP5MklKUd1S2-dEyVMjaZdxV2PPSu4g0oN4JOMErBSEbY2D1lKhLZ6GqxdjRL_yXeJxVdJXO7V2Bo2EjfD5mzZIFTWIDMZ68h3v9bRhrn5wN2hboIZBuzMdwRXd0K3mCHaOcKoY7hkFTKvWGjC3ZUDhwkAgOcVK_y2p7ZOBLt7WC0Yyb_kJ3q8UrYB4T3mB-wCOq31aYm8oxmBoi6MMTVr88FxMweuRr8otBxzjWsMn9ZCxX9TSlfG-1KKR9YqS3Q21AWtBND-p8RgA9WSvXAJk00RFH7aEHSmxHIiAbafPSxQgN8P_2mTaQCvyosGkNNSjUu4lxy3e74CmTRGLBAZhVYxde3SscyRK0Mx01hVgBxGTYJ0QJYD47HVK4VSXLak",
+								"description": "access token you have to add Bearer in front of token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/myorders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"myorders"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
