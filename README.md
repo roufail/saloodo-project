@@ -1,6 +1,7 @@
 this is a laravel api you can setup the project using next instructions<br />
 first of all pull current repository to your machine<br />
 from terminal run these commands<br />
+add .env file data database, username, password
 composer install<br />
 php artisan migrate<br />
 php artisan db:seed<br /> // this is fake data image will not working in first place you can add new projects with real photo will be fine
